@@ -9,8 +9,9 @@ import requests
 import os
 
 OCR_LANGUAGE = os.environ.get("OCR_LANGUAGE", "ch")
+KEY = os.environ.get("KEY", "123")
 
-router = APIRouter(prefix="/ocr", tags=["OCR"])
+router = APIRouter(prefix="/" + KEY + "/ocr", tags=["OCR"])
 
 ocr = PaddleOCR(use_angle_cls=True, lang=OCR_LANGUAGE)
 
